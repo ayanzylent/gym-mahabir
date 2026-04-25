@@ -1,19 +1,49 @@
-import { Button } from "@/components/ui/button"
+import { About } from "@/components/block/about"
+import { Footer } from "@/components/block/footer"
+import { Hero } from "@/components/block/hero"
+import { Reviews } from "@/components/block/reviews"
+import { Services } from "@/components/block/services"
+import { Location } from "@/components/block/location"
+import { APP_URL, APP_NAME, GYM_CONTACT } from "@/config/constant"
 
 export default function Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": APP_NAME,
+    "image": `${APP_URL}/hero-image.png`, // Update this path to your actual logo/image
+    "@id": APP_URL,
+    "url": APP_URL,
+    "telephone": GYM_CONTACT.telephone,
+    "address": {
+      "@type": "PostalAddress",
+      ...GYM_CONTACT.address
+    },
+    "priceRange": "$$",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+      ],
+      "opens": "06:00",
+      "closes": "23:00"
+    }
+  };
+
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="w-full flex-grow flex flex-col">
+        <Hero />
+        <About />
+        <Services />
+        <Reviews />
+        <Location />
+        <Footer />
+      </main>
+    </>
   )
 }
