@@ -15,7 +15,7 @@ export function About() {
             We Build <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-200 to-neutral-600">Great Bodies.</span>
           </h2>
           <p className="text-neutral-400 text-xs md:text-sm lg:text-base xl:text-xl leading-relaxed mb-6 md:mb-8 max-w-sm md:max-w-lg xl:max-w-full font-light">
-            Welcome to Mahabir Gym. Step into a space where raw power meets modern fitness. Whether your goal is to build muscle, increase endurance, or transform your lifestyle, we provide the ultimate training ground to unleash your inner strength.          </p>
+            Welcome to Gym Mahabir. Step into a space where raw power meets modern fitness. Whether your goal is to build muscle, increase endurance, or transform your lifestyle, we provide the ultimate training ground to unleash your inner strength.          </p>
 
 
         </div>

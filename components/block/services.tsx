@@ -14,7 +14,7 @@ const services = [
     image: "/service-2.png",
   },
   {
-    title: "Professional trainer",
+    title: "Fitness trainer",
     subtitle: "Expert Guidance",
     description: "Achieve your fitness goals faster with personalized coaching from our elite certified trainers.",
     image: "/service-3.png",
